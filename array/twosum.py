@@ -1,9 +1,7 @@
 class Solution(object):
     def twoSum(self, nums, target):
         """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
+        如果序列已排序 可用two pointer去解
         """
         dict={}
         for i, num in enumerate(nums):
