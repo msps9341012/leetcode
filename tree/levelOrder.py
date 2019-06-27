@@ -20,3 +20,22 @@ def levelOrder(self, root):
             if node[0].right:
                 queue.append([node[0].right,depth+1])
         return res
+
+def levelOrder(self, root: TreeNode) -> List[List[int]]:
+    ret = []
+    
+    if not root: 
+        return ret
+    
+    def helper(node, level):
+        
+        if len(ret) < level:
+            ret.append([node.val])
+        else:
+            ret[level-1].append(node.val)
+            
+        if node.left : helper(node.left, level+1)
+        if node.right : helper(node.right, level+1)
+            
+    helper(root,1)
+    return ret
